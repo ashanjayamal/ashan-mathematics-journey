@@ -1,0 +1,10 @@
+.definition {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+.theorem {
+    border: 1px solid red;
+    padding: 10px;
+    margin: 10px;
+}
