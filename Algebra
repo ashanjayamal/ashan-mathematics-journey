@@ -4,11 +4,11 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <title>ALGEBRA</title>
+    <title>Algebra</title>
 </head>
 <body>
     <h1>About This Website</h1>
-    <p>This is website for learning algbera.</p>
+    <p>This is a website for learning algebra.</p>
     <p>This is an inline equation \\(a^2 + b^2 = c^2\\), and the following is a display equation:</p>
     $$E = mc^2$$
 
