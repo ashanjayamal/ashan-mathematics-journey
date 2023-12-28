@@ -113,8 +113,8 @@
 
     <h3 id="prop1">Proposition 1</h3>
     <p>In a Boolean algebra, complements are unique.</p>
-
-    <h3 id="proof1">Proof</h3>
+      <div class="proof">
+    <p><em>Proof:</em></p>
     <p>Assume that for a certain element $a$, we have two complements, denoted as $x$ and $y$. We then have:</p>
     <p>$$
     \begin{align*}
@@ -128,7 +128,8 @@
     $$</p>
     <p>A similar argument can be used to show that $y = x \lor y$.</p>
     <p>Now, from the equation $x = x \land y$, we can infer that $x \leq y$ because the meet operation $\land$ returns the greatest lower bound of its operands. Similarly, from the equation $y = x \lor y$, we can infer that $y \leq x$ because the join operation $\lor$ returns the least upper bound of its operands. Therefore, if $x \leq y$ and $y \leq x$, it follows that $x = y$. Hence, the complement of any element in a Boolean algebra is unique.</p>
-
+       <p class="qed">∎</p>
+   </div>
     <h3 id="prop2">Proposition 2</h3>
     <p>The following properties are valid in Boolean algebras:</p>
     <ol>
