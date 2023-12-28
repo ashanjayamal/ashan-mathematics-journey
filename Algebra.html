@@ -40,5 +40,57 @@
 <a href="#section1">Go to Section 1</a>
 <a href="#eq1">See Equation 1</a>
 
+   <h1 id="chapter1">Space</h1>
+    <h2 id="section1">Boolean Algebra</h2>
+    <p>The study of Boolean algebras commences with the definitions of posets, distributive lattices, and totally ordered sets. Once these concepts are established, we can proceed to describe Boolean algebras as a special type of distributive lattice.</p>
+
+    <h3 id="df1">Definition 1</h3>
+    <p>A partially-ordered set, or poset, is a set $A$ in conjunction with a relation $\leq$ that satisfies the following properties:</p>
+    <ol>
+        <li>Reflexivity: For every element $a \in A$, we have $a \leq a$.</li>
+        <li>Transitivity: For all $a, b, c \in A$, if $a \leq b$ and $b \leq c$, then $a \leq c$.</li>
+        <li>Antisymmetry: For all $a, b \in A$, if $a \leq b$ and $b \leq a$ then $a = b$.</li>
+    </ol>
+
+    <!-- More content goes here -->
+
+    <h3 id="df2">Definition 2</h3>
+    <p>A totally ordered set, or toset, is a poset $A$ in which any two elements are comparable. That is, for any $a, b \in A$, either $a \leq b$ or $b \leq a$.</p>
+
+    <!-- More content goes here -->
+
+    <p>For instance, consider the set of sets $Y = \{\{a\}, \{b\}, \{a, b\}, \{a, c\}\}$. We can establish a partial order on $Y$ by defining $a \leq b$ if $a \subseteq b$. In this context, we can state that $\{a\} \leq \{a, b\}$ since $\{a\} \subseteq \{a, b\}$, and $\{a\} \leq \{a, c\}$. Moreover, $\{b\} \leq \{a, b\}$. However, $\{b\} \nleq \{a, c\}$. The latter two sets are incomparable under our defined partial order.</p>
+
+    <!-- More content goes here -->
+
+    <h3 id="df3">Definition 3</h3>
+    <p>Let $S$ be a finite subset of a poset $A$. The join of $S$, denoted by $\bigvee S$, is a unique element (if it exists) that satisfies the following conditions:</p>
+    <ol>
+        <li>Every element $s \in S$ is less than or equal to $\bigvee S$, i.e., $s \leq \bigvee S$ for all $s \in S$.</li>
+        <li>If there exists an element $x \in A$ such that every element $s \in S$ is less than or equal to $x$, i.e., $s \leq x$ for all $s \in S$, then $\bigvee S \leq x$.</li>
+    </ol>
+    <p>The join $\bigvee S$ is also known as the least upper bound or supremum of $S$.</p>
+    <p>In contrast, the meet of $S$, denoted by $\bigwedge S$, is the dual concept to the join. The meet $\bigwedge S$ is defined in the same manner as the join, but with the direction of the inequalities reversed. It is also referred to as the greatest lower bound or infimum of $S$.</p>
+
+    <!-- More content goes here -->
+
+    <h3 id="notation1">Notation 1</h3>
+    <p>Consider a set with precisely two elements, denoted as $\{a, b\}$. The join of these elements is represented as $a \vee b$, and their meet is denoted as $a \wedge b$.</p>
+
+    <!-- More content goes here -->
+
+    <h3 id="df4">Definition 4</h3>
+    <p>Let $P$ be a poset. If there exists an element $a \in P$ such that $a \leq x$ for all $x \in P$, then $a$ is called the least or zero element of $P$. It is denoted by $0$. If there exists an element $b \in P$ such that $x \leq b$ for all $x \in P$, then $b$ is called the greatest or unit element of $P$. It is denoted by $1$.</p>
+
+    <!-- More content goes here -->
+
+    <h3 id="df5">Definition 5</h3>
+    <p>A lattice is a poset $A$ such that every finite subset of $A$ has both a meet and a join. A lattice is termed complete if it accommodates meets and joins of arbitrary subsets of $A$, not merely finite ones. A lattice is characterized as distributive if the operations of meet and join obey to the distributive law. Specifically, for all $a, b, c \in A$, the following equality holds:</p>
+    <p>$$a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)$$</p>
+
+    <!-- More content goes here -->
+
+    <h3 id="eg1">Example 1</h3>
+    <p>The operations $\land$ (meet) and $\lor$ (join) in a lattice can be compared to the intersection ($\cap$) and union ($\cup$) operations in set theory. For instance, consider a nonempty set $X$ and its power set $P(X)$, which is the set of all subsets of $X$. If we define the meet and join operations as set intersection and union, respectively, and if we denote the least element as $0 = \emptyset$ and the greatest element as $1 = X$, then $P(X)$ forms a complete distributive lattice under the subset inclusion order. This example illustrates the parallels between set operations and lattice operations.</p>
 </body>
 </html>
