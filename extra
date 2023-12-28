@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+   <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+        });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+
+<title>Algebra</title>
+</head>
+<body>
+<script src="scripts.js"></script>
+
+    <h1>About This Website</h1>
+    <p>This is a website for learning algebra.</p>
+    <p>This is an inline equation \\(a^2 + b^2 = c^2\\), and the following is a display equation:</p>
+    $$E = mc^2$$
+</br>
+<div class="definition">
+    <h2>Definition <span class="def-number"></span></h2>
+    <p>In a right-angled triangle, the square of the length of the hypotenuse is equal to the sum of the squares of the lengths of the other two sides.</p>
+</div>
+<div class="theorem">
+    <h2>Theorem <span class="thm-number"></span></h2>
+    <p>For any right-angled triangle with sides of lengths \(a\), \(b\), and \(c\), where \(c\) is the length of the hypotenuse, \(a^2 + b^2 = c^2\).</p>
+</div>
+</br>
+    <section id="section1">
+  <h2>Section 1</h2>
+  <!-- Section content goes here -->
+</section>
+
+<section id="section2">
+  <h2>Section 2</h2>
+  <!-- Section content goes here -->
+</section>
+
+
+<span id="eq1">$$y = mx + c$$</span>
+<a href="#section1">Go to Section 1</a>
+<a href="#eq1">See Equation 1</a>
+
+   <h1 id="chapter1">Space</h1>
+    <h2 id="section1">Boolean Algebra</h2>
+    <p>The study of Boolean algebras commences with the definitions of posets, distributive lattices, and totally ordered sets. Once these concepts are established, we can proceed to describe Boolean algebras as a special type of distributive lattice.</p>
+
+    <h3 id="df1">Definition 1</h3>
+    <p>A partially-ordered set, or poset, is a set $A$ in conjunction with a relation $\leq$ that satisfies the following properties:</p>
+    <ol>
+        <li>Reflexivity: For every element $a \in A$, we have $a \leq a$.</li>
+        <li>Transitivity: For all $a, b, c \in A$, if $a \leq b$ and $b \leq c$, then $a \leq c$.</li>
+        <li>Antisymmetry: For all $a, b \in A$, if $a \leq b$ and $b \leq a$ then $a = b$.</li>
+    </ol>
+
+    <!-- More content goes here -->
+
+    <h3 id="df2">Definition 2</h3>
+    <p>A totally ordered set, or toset, is a poset $A$ in which any two elements are comparable. That is, for any $a, b \in A$, either $a \leq b$ or $b \leq a$.</p>
+
+    <!-- More content goes here -->
+
+   <div class="proof">
+    <p><em>Proof:</em></p>
+This is new my proof
+    <p class="qed">∎</p>
+</div>
+
+   </body>
+
+</html>
