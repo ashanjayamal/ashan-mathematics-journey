@@ -97,8 +97,50 @@
     <p>$$a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)$$</p>
 
     <!-- More content goes here -->
-
     <h3 id="eg1">Example 1</h3>
-    <p>The operations $\land$ (meet) and $\lor$ (join) in a lattice can be compared to the intersection ($\cap$) and union ($\cup$) operations in set theory. For instance, consider a nonempty set $X$ and its power set $P(X)$, which is the set of all subsets of $X$. If we define the meet and join operations as set intersection and union, respectively, and if we denote the least element as $0 = \emptyset$ and the greatest element as $1 = X$, then $P(X)$ forms a complete distributive lattice under the subset inclusion order. This example illustrates the parallels between set operations and lattice operations.</p>
-</body>
+    <ol>
+        <li>The operations $\land$ (meet) and $\lor$ (join) in a lattice can be compared to the intersection ($\cap$) and union ($\cup$) operations in set theory. For instance, consider a nonempty set $X$ and its power set $P(X)$, which is the set of all subsets of $X$. If we define the meet and join operations as set intersection and union, respectively, and if we denote the least element as $0 = \emptyset$ and the greatest element as $1 = X$, then $P(X)$ forms a complete distributive lattice under the subset inclusion order. This example illustrates the parallels between set operations and lattice operations.</li>
+        <li>In a similar vein, if we have a topological space $X$, the set $\tau(X)$ of all open sets in $X$, when ordered by inclusion, forms a complete distributive lattice. The join operation corresponds to the union of sets, and the meet operation corresponds to the interior of the intersection of sets. This example shows how the structure of a topological space can be viewed as a complete distributive lattice, demonstrating the interplay between topology and lattice theory.</li>
+    </ol>
+
+    <h3 id="df1">Definition 1</h3>
+    <p>Let $A$ be a distributive lattice. For an element $a \in A$, assume there exists another element $\neg a \in A$ satisfying the following conditions:</p>
+    <ol>
+        <li>$a \land \neg a = 0$, and</li>
+        <li>$a \lor \neg a = 1$.</li>
+    </ol>
+    <p>Then, we refer to $\neg a$ as a complement of $a$. A distributive lattice where each element possesses a complement is termed a Boolean algebra.</p>
+
+    <h3 id="prop1">Proposition 1</h3>
+    <p>In a Boolean algebra, complements are unique.</p>
+
+    <h3 id="proof1">Proof</h3>
+    <p>Assume that for a certain element $a$, we have two complements, denoted as $x$ and $y$. We then have:</p>
+    <p>$$
+    \begin{align*}
+    x & = x \land (x \lor a) && \text{(definition of complement)} \\
+    & = x \land 1 && \text{(since $x \lor a = 1$)} \\
+    & = x \land (y \lor a) && \text{(since $y$ is also a complement of $a$)} \\
+    & = (x \land y) \lor (x \land a) && \text{(distributive law)} \\
+    & = (x \land y) \lor 0 && \text{(since $x \land a = 0$)} \\
+    & = x \land y && \text{(identity law)}.
+    \end{align*}
+    $$</p>
+    <p>A similar argument can be used to show that $y = x \lor y$.</p>
+    <p>Now, from the equation $x = x \land y$, we can infer that $x \leq y$ because the meet operation $\land$ returns the greatest lower bound of its operands. Similarly, from the equation $y = x \lor y$, we can infer that $y \leq x$ because the join operation $\lor$ returns the least upper bound of its operands. Therefore, if $x \leq y$ and $y \leq x$, it follows that $x = y$. Hence, the complement of any element in a Boolean algebra is unique.</p>
+
+    <h3 id="prop2">Proposition 2</h3>
+    <p>The following properties are valid in Boolean algebras:</p>
+    <ol>
+        <li>Idempotency of meets and joins: $a \land a = a$, and $a \lor a = a$.</li>
+        <li>Commutativity of meets and joins: $a \land b = b \land a$, and $a \lor b = b \lor a$.</li>
+        <li>Associativity of meets and joins: $a \land (b \land c) = (a \land b) \land c$, and $a \lor (b \lor c) = (a \lor b) \lor c$.</li>
+        <li>Distributivity of meets and joins: $a \land (b \lor c) = (a \land b) \lor (a \land c)$, and $a \lor (b \land c) = (a \lor b) \land (a \lor c)$.</li>
+        <li>$a \land \neg a = 0$ and $a \lor \neg a = 1$.</li>
+        <li>$a \land 0 = 0$ and $a \lor 1 = 1$.</li>
+        <li>$a \land 1 = a$ and $a \lor 0 = a$.</li>
+        <li>Every element is equal to its double complement: $\neg \neg a = a$.</li>
+        <li>$\neg 0 = 1$ and $\neg 1 = 0$.</li>
+    </ol>
+   </body>
 </html>
