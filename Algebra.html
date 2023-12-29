@@ -165,7 +165,8 @@ The set $\{0, 1\}$ (with $0 \leq 1)$ is a Boolean algebra. We call this set <b>$
 <h3 id="eg3">Example 3</h3>
      Given a topological space $X$, $\tau(X)$ (the lattice of open sets ordered by inclusion) is an ideal in $P(X)$.
     
-<div class="proof"><p><em>Proof:</em></p>
+<div class="proof">
+    <p><em>Proof:</em></p>
     We want to show that $\tau(X)$ is an ideal in the power set $P(X)$, which is the set of all subsets of $X$.
     Let's verify these properties for $\tau(X)$:
     <ol>
@@ -193,6 +194,30 @@ The set $\{0, 1\}$ (with $0 \leq 1)$ is a Boolean algebra. We call this set <b>$
     <p  class="qed">∎</p>  
 </div>
     
+
+<div class="theorem"> 
+<h3 id="prop1">Theorem <span class="thm-number"></span></h3>
+</div>
+<div class="proof">
+    <p><em>Proof:</em></p>
+    <p>First, we recall Zorn’s Lemma.</p>
+    <div class="theorem"> 
+        <h3 id="prop1">Theorem <span class="thm-number"></span> (Zorn's Lemma)</h3>
+        <p>Let $P$ be a nonempty partially ordered set, such that for every totally ordered subset $L$, there exists some “upper bound” $u$ for $L$ so that $u ≥ x$ for every $x ∈ L$. Then $P$ has a maximal element.</p>
+    </div>
+        <p>Let $A$ be Boolean algebra and $I$ be an proper ideal in $A$. Now consider,</p>
+        <p>$$P = \{\text{Proper ideals of $A$ that contain $I$}\}$$.</p>
+        <p>Note that $( P,\subseteq)$ is a non-empty poset. Let $C$ be a non-empty totally ordered subset (chain) of $P$. Let $M=\cup_{I\in C}~I$. Note that $M$ is an upper bound for $C$. Because $\cup_{I\in C}~I=M\supseteq J $ for all $ J \in C$.</p>
+        <strong>Claim:</strong> : $M \in P=\{$ Proper ideals of $A$ that contain $I\}$.
+    
+        <ul><li>$M \subsetneq A$. ($ M$ is properly contained in $A$)
+            <ul><li>Since every element in $P$ is proper,  $1 \not\in J$ for all $J ∈ C \implies1 \not\in M$, hence $M\neq A$.</li></ul>
+            </li><li>$M$ is a ideal in $A$.
+            <ul><li>$M\neq \emptyset. (\because I \text{ is in } M)$.</li><li>Suppose that $a, b ∈ M$. Then there is some $J_a, J_b ∈ C$ with $a ∈ J_a$ and $b ∈ J_b$. Note that $C$ is a totally ordered set (chain). Thus, either $J_a ⊆ J_b$ or else $J_b ⊆ J_a$. Without loss of generality, assume that that $J_b ⊆ J_a$. Then both $a, b ∈ J_a$, hence $a \vee b ∈ J_a$.</li><li>Now suppose that $\beta∈ A$, and $a ∈ M$. If $a ∈ M$, then it must be contained in some $J_a ∈ C$. Thus,$ \beta\wedge a ∈ J_a$, and so $\beta \wedge a ∈ M$.</li><li>Thus $M$ is an ideal in Boolean algebra $A$.</li></ul>
+            </li><li>$M$ contains $I$: Since $I ⊆ J ⊆ M$ for every $J ∈ C$.</li><li>Thus $M$ is a proper ideal in $A$ that contains $I$.</li></ul>
+            By Zorn’s Lemma, $P$ has a maximal element, which is a maximal proper ideal of $A$ containing $I$ as desired. 
+        <p  class="qed">∎</p>  
+</div>
 
 <!-- Later in your document --------------------------------------------------------------------------------------------->
 <p>According to Proposition<a href="#prop1" id="def-link">prop</a>...</p>
