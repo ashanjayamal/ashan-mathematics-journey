@@ -26,7 +26,7 @@
 
 
 <div class="definition">
-    <h2>Definition <span class="def-number"></span></h2>
+    <h3>Definition <span class="def-number"></span></h3>
     <p>A partially-ordered set, or poset, is a set $A$ in conjunction with a relation $\leq$ that satisfies the following properties:</p>
     <ol>
         <li>Reflexivity: For every element $a \in A$, we have $a \leq a$.</li>
@@ -36,19 +36,19 @@
 </div>
 
 <div class="definition">
-    <h2>Definition <span class="def-number"></span></h2>
+    <h3>Definition <span class="def-number"></span></h3>
     <p>In a right-angled triangle, the square of the length of the hypotenuse is equal to the sum of the squares of the lengths of the other two sides.</p>
 </div>
 
 <div class="definition">
-    <h2 id="df1">Definition <span class="def-number">q</span></h2>
+    <h3 id="df1">Definition <span class="def-number"></span></h3>
     <p>A totally ordered set, or toset, is a poset $A$ in which any two elements are comparable. That is, for any $a, b \in A$, either $a \leq b$ or $b \leq a$.</p>
 </div>
 
 <!-- More content goes here -->
 
 <div class="definition">
-    <h2 id="df2">Definition <span class="def-number">3</span></h2>
+    <h3 id="df2">Definition <span class="def-number"></span></h3>
     <p>Let $S$ be a finite subset of a poset $A$. The join of $S$, denoted by $\bigvee S$, is a unique element (if it exists) that satisfies the following conditions:</p>
     <ol>
         <li>Every element $s \in S$ is less than or equal to $\bigvee S$, i.e., $s \leq \bigvee S$ for all $s \in S$.</li>
@@ -61,14 +61,14 @@
 <!-- More content goes here -->
 
 <div class="definition">
-    <h2 id="df3">Definition <span class="def-number">4</span></h2>
+    <h3 id="df3">Definition <span class="def-number"></span></h3>
     <p>Let $P$ be a poset. If there exists an element $a \in P$ such that $a \leq x$ for all $x \in P$, then $a$ is called the least or zero element of $P$. It is denoted by $0$. If there exists an element $b \in P$ such that $x \leq b$ for all $x \in P$, then $b$ is called the greatest or unit element of $P$. It is denoted by $1$.</p>
 </div>
 
 <!-- More content goes here -->
 
 <div class="definition">
-    <h2 id="df4">Definition <span class="def-number">5</span></h2>
+    <h3 id="df4">Definition <span class="def-number"></span></h3>
     <p>A lattice is a poset $A$ such that every finite subset of $A$ has both a meet and a join. A lattice is termed complete if it accommodates meets and joins of arbitrary subsets of $A$, not merely finite ones. A lattice is characterized as distributive if the operations of meet and join obey to the distributive law. Specifically, for all $a, b, c \in A$, the following equality holds:</p>
     <p>$$a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)$$</p>
 </div>
@@ -81,7 +81,7 @@
     </ol>
 
     <div class="definition">
-    <h2>Definition <span class="def-number">1</span></h2>
+    <h3>Definition <span class="def-number"></span></h3>
     <p>Let $A$ be a distributive lattice. For an element $a \in A$, assume there exists another element $\neg a \in A$ satisfying the following conditions:</p>
     <ol>
         <li>$a \land \neg a = 0$, and</li>
@@ -91,10 +91,10 @@
     <p>Then, we refer to $\neg a$ as a complement of $a$. A distributive lattice where each element possesses a complement is termed a Boolean algebra.</p>
 
     <div class="theorem">
-    <h2>Propoistion <span class="thm-number"></span></h2>
+    <h3>Propoistion <span class="thm-number"></span></h3>
     <p>In a Boolean algebra, complements are unique.</p>
     </div>
-      <div class="proof">
+    <div class="proof">
     <p><em>Proof:</em></p>
     <p>Assume that for a certain element $a$, we have two complements, denoted as $x$ and $y$. We then have:</p>
     <p>$$
@@ -112,7 +112,7 @@
        <p class="qed">∎</p>
    </div>
 <div class="theorem">
-    <h2 id="prop1">Proposition <span class="thm-number"></span></h2>
+    <h3 id="prop1">Proposition <span class="thm-number"></span></h3>
     <p>The following properties are valid in Boolean algebras:</p>
     <ol>
         <li>Idempotency of meets and joins: $a \land a = a$, and $a \lor a = a$.</li>
@@ -128,30 +128,73 @@
 </div>
 <div Class="proof">
    <p><em>Proof:</em></p>   
-For each of these statements, we only need to prove one direction; the other direction follows by duality, i.e., by swapping $\lor$ with $\land$, $0$ with $1$, and $\leq$ with $\geq$. 
+   <p>For each of these statements, we only need to prove one direction; the other direction follows by duality, i.e., by swapping $\lor$ with $\land$, $0$ with $1$, and $\leq$ with $\geq$. 
+   <p>Statements (1) and (2) are immediate consequences of the definitions of meet and join. 
+   </p>
+   <p>For statement (3), observe that $(a \lor b) \lor c$ and $a \lor (b \lor c)$ are both upper bounds for the set $\{a, b, c\}$, so they must be greater than or equal to the least upper bound of $\{a, b, c\}$. Conversely, they must be less than or equal to it, for example, $(a \lor b) \lor c \leq (a \lor b \lor c) \lor c = (a \lor b \lor c)$. 
+   </p>
+   <p>Statement (4) holds because a Boolean algebra is distributive by definition. 
+   </p>
+   <p>Statement (5) is the definition of a complement.  
+   </p>
+   <p>Statements (6) and (7) follow directly from the definitions of $0$ and $1$, and the definitions of meet and join, respectively. 
+   </p>
+   <p>Statement (8) holds due to the uniqueness of complements: $\neg a \land \neg \neg a = 0$ and $\neg a \land a = 0$, so $a = \neg \neg a$.   
+   </p>
+   <p>Finally, statement (9) follows from statement (6) and the uniqueness of complements.
+ <p  class="qed">∎</p>   
 
-Statements (1) and (2) are immediate consequences of the definitions of meet and join. 
-
-For statement (3), observe that $(a \lor b) \lor c$ and $a \lor (b \lor c)$ are both upper bounds for the set $\{a, b, c\}$, so they must be greater than or equal to the least upper bound of $\{a, b, c\}$. Conversely, they must be less than or equal to it, for example, $(a \lor b) \lor c \leq (a \lor b \lor c) \lor c = (a \lor b \lor c)$. 
-
-Statement (4) holds because a Boolean algebra is distributive by definition. 
-
-Statement (5) is the definition of a complement. 
-
-Statements (6) and (7) follow directly from the definitions of $0$ and $1$, and the definitions of meet and join, respectively. 
-
-Statement (8) holds due to the uniqueness of complements: $\neg a \land \neg \neg a = 0$ and $\neg a \land a = 0$, so $a = \neg \neg a$. 
-
-Finally, statement (9) follows from statement (6) and the uniqueness of complements.
-
- <p class="qed">∎</p>   
-   According to definition <a href="#df2">defnition</a>
-<p><a href="#chapter1">Go to Chapter 1</a></p>
+</div>
+<h3 id="eg2">Example 2</h3>
+The set $\{0, 1\}$ (with $0 \leq 1)$ is a Boolean algebra. We call this set <b>$\textbf{2}$</b>.
+<div class="definition">
+    <h3>Definition <span class="def-number"></span></h3>
+    Let $A$ be a Boolean algebra. An `ideal' is a subset $I \subseteq A$ that satisfies the following properties:
+<ol>
+<li> $0 \in I$</li>
+<li>If $a \in I$ and $b \in I$, then $a \vee b \in I$, and</li>
+<li>If $a \in I$ and $b \in A$, then $a \wedge b \in I$.</li>
+</ol>
 </div>
 
+<div class="definition">
+    <h3 id="df3">Definition <span class="def-number"></span></h3>
+    We say an ideal $I \subseteq A$ is `proper' if $I \neq A$, and `maximal' if it is proper and contains no proper ideals other than itself.
+</div>
+    
+<h3 id="eg3">Example 3</h3>
+     Given a topological space $X$, $\tau(X)$ (the lattice of open sets ordered by inclusion) is an ideal in $P(X)$.
+    
+<div class="proof"><p><em>Proof:</em></p>
+    We want to show that $\tau(X)$ is an ideal in the power set $P(X)$, which is the set of all subsets of $X$.
+    Let's verify these properties for $\tau(X)$:
+    <ol>
+    <li>The empty set $\emptyset$ is an open set, so $\emptyset \in \tau(X)$.</li>
+    <li>The union of any two open sets is open. So if $U, V \in \tau(X)$, then $U \cup V \in \tau(X)$.</li>
+    <li>The intersection of an open set with any set is a subset of the open set and hence is also open. So if $U \in \tau(X)$ and $S \subseteq X$, then $U \cap S \in \tau(X)$.</li>
+    </ol>
+    Therefore, $\tau(X)$ is an ideal in $P(X)$.
+    </div>
+    
+    <div class="theorem"> 
+        <h3 id="prop1">Theorem <span class="thm-number"></span></h3>
+    In a Boolean algebra $A$, an ideal $I \subset A$ is maximal iff for every $a \in A$, either $a \in I$ or $\neg a \in I$, but not both.
+    </div>
+    <div class="proof"><p><em>Proof:</em></p>
+    Let $a_0$ be an element of $A$ and $I$ is an ideal of $A$ that does not include $a_0$ or $\neg a_0$. We aim to demonstrate that $I$ is not a maximal ideal. For this, we define the set $J$ as the collection of all elements that can be expressed as $a \vee b$, where $a \leq a_0$ and $b$ belong to $I$. 
+    
+    \[J=\left\{ a \vee b :  a \leq a_0 \text{ and }b\in I\right\}\]
+    It is straightforward to verify that $J$ is an ideal that includes $a_0$.
+    Note that 
+    $0=0\vee 0\in J$ because $0\leq a_0$ and $0\in I$ (since $I$ is an ideal of $A$.)
+    
+    <p>Moreover, all elements in $I$ are also in $J$, implying $I \subset J$. If we can establish that $J \neq A$, it would mean that $I$ is not the largest ideal. However, $J$ cannot be $A$ because it cannot include $\neg a_0$. If it did, we could identify $a$ and $b$ ($a \leq a_0$, $b \in I$) such that $\neg a_0 = a \vee b$. But then $\neg a_0 = \neg a_0 \land \neg a_0 = (a \vee b) \land \neg a_0 = b$, which contradicts the premise that $\neg a_0 \notin I$. Therefore, for all $a \in A$, a maximal ideal must include either $a$ or $\neg a$. Moreover, no maximal ideal can include both: if an ideal $K$ includes both $a$ and $\neg a$, then it includes $a \vee \neg a = 1$, so for any element $b \in A$, $K$ includes $b \land 1 = b$, implying $K = A$. Hence, $K$ is not a proper ideal, and therefore, it is not a maximal ideal. As a result, every maximal ideal includes exactly one of $a$ or $\neg a$.</p>
+    <p>On the other hand, suppose $I \subset A$ is an ideal such that, for all $a \in A$, either $a \in I$ or $\neg a \in I$. We aim to demonstrate that $I$ is the largest ideal by showing that the only ideal that properly includes it is $A$. Let $J$ be an ideal that properly includes $I$. Then there exists an element $a$ such that $b \in J$ but $b \notin I$, so by the assumption $\neg b \in I$, which implies $\neg b \in J$. But we have already established that if both $b$ and $\neg b$ are in an ideal, the ideal must be the entire algebra.</p>
+    <p  class="qed">∎</p>  
+</div>
+    
 
-
-<!-- Later in your document ------------------------------------------------------------------------------------>
+<!-- Later in your document --------------------------------------------------------------------------------------------->
 <p>According to Proposition<a href="#prop1" id="def-link">prop</a>...</p>
 
 <script>
@@ -175,6 +218,7 @@ Finally, statement (9) follows from statement (6) and the uniqueness of compleme
         link.textContent = thm.textContent;
     }
 }
+
 </script>
 </body>
 </html>
