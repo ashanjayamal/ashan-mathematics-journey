@@ -40,7 +40,10 @@
 <div class="proof">
 <p><em>Proof:</em></p>
 <p>
-$(\Rightarrow)$ Suppose $X$ is compact and let $F$ be a collection of closed subsets of $X$ with the FIP. We want to show that $\bigcap F \neq \emptyset$. Suppose for contradiction that $\bigcap F = \emptyset$. Then the sets in $F$ cover $X$, and since $X$ is compact, there is a finite subcover, say $\{F_1, F_2, \ldots, F_n\}$. But this contradicts the assumption that $F$ has the FIP, because the intersection of any finite subcollection of $F$ is non-empty.</p>
+$(\Rightarrow)$ Suppose $X$ is compact and let $F$ be a collection of closed subsets of $X$ with the FIP. We want to show that $\bigcap F \neq \emptyset$.
+   Suppose for contradiction that $\bigcap F = \emptyset$. 
+   Then for every point in $X$, there is at least one set in $F$ that does not contain this point. This is equivalent to saying that every point in $X$ is in the complement of at least one set in $F$. Since the sets in $F$ are closed, their complements are open, and the union of these open sets covers $X$.
+  Thus there exist a open cover of X and since $X$ is compact, there is a finite subcover, say $\{F_1, F_2, \ldots, F_n\}$. But this contradicts the assumption that $F$ has the FIP, because the intersection of any finite subcollection of $F$ is non-empty.</p>
 <p>
 $(\Leftarrow)$ Now suppose that for every collection $F$ of closed subsets of $X$ with the FIP, we have $\bigcap F \neq \emptyset$. We want to show that $X$ is compact. Let $\{U_i\}$ be an open cover of $X$. We may assume that the $U_i$ are distinct. Define $F = \{X \setminus U_i\}$. Then $F$ is a collection of closed subsets of $X$ with the FIP. By assumption, $\bigcap F \neq \emptyset$, which means that there is a point in $X$ that is not in any $U_i$, contradicting the fact that $\{U_i\}$ is a cover of $X$. Therefore, $X$ must be compact.
 </p>
