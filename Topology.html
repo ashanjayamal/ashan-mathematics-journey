@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+   <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+        });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+
+<title>Topology</title>
+</head>
+<body>
+<script src="scripts.js"></script>
+
+    <h1>Topology</h1>
+    <p>This page contains one of the proof of the<strong>Tychonoff’s Theorem. </strong> We want some tools to proove the Tychonoff’s Theorem. 
+        We want notation of filters. 
+        Further, Munkres proves Tychonoff’s theorem without making mention of filters. 
+        Instead, the notion of a maximal collection with the FIP is used.</p>
+<div class="definition">
+    <h3>Definition <span class="def-number"></span></h3>
+    <p>Recall that a collection $F$ of subsets of some set $X$ has the finite intersection property (FIP) if for every finite subcollection $\{F_1, F_2, \ldots, F_n\} \subseteq F$ we have
+        \[
+        \bigcap_{i=1}^{n} F_i \neq \emptyset
+        \]
+        </p>
+</div>
+<div class="theorem">
+    <h3>Theorem <span class="thm-number"></span></h3>
+    A topological space $X$ is compact if and only if for every collection $F$ of closed subsets of $X$ with the FIP, we have $\bigcap F \neq \emptyset$.
+
+</div>
+<div class="proof">
+<p><em>Proof:</em></p>
+<p>
+$(\Rightarrow)$ Suppose $X$ is compact and let $F$ be a collection of closed subsets of $X$ with the FIP. We want to show that $\bigcap F \neq \emptyset$. Suppose for contradiction that $\bigcap F = \emptyset$. Then the sets in $F$ cover $X$, and since $X$ is compact, there is a finite subcover, say $\{F_1, F_2, \ldots, F_n\}$. But this contradicts the assumption that $F$ has the FIP, because the intersection of any finite subcollection of $F$ is non-empty.</p>
+<p>
+$(\Leftarrow)$ Now suppose that for every collection $F$ of closed subsets of $X$ with the FIP, we have $\bigcap F \neq \emptyset$. We want to show that $X$ is compact. Let $\{U_i\}$ be an open cover of $X$. We may assume that the $U_i$ are distinct. Define $F = \{X \setminus U_i\}$. Then $F$ is a collection of closed subsets of $X$ with the FIP. By assumption, $\bigcap F \neq \emptyset$, which means that there is a point in $X$ that is not in any $U_i$, contradicting the fact that $\{U_i\}$ is a cover of $X$. Therefore, $X$ must be compact.
+</p>
+<p class="qed">∎</p>
+</div>
+
+<!-- Later in your document --------------------------------------------------------------------------------------------->
+
+
+<script>
+    window.onload = function() {
+    var definitions = document.getElementsByClassName('definition');
+    for (var i = 0; i < definitions.length; i++) {
+        definitions[i].getElementsByClassName('def-number')[0].innerText = i + 1;
+    }
+    var theorems = document.getElementsByClassName('theorem');
+    for (var i = 0; i < theorems.length; i++) {
+        theorems[i].getElementsByClassName('thm-number')[0].innerText = definitions.length + i + 1;
+    }
+    
+    var link = document.getElementById('def-link');
+    var def = document.querySelector(link.getAttribute('href') + ' .def-number');
+    var thm = document.querySelector(link.getAttribute('href') + ' .thm-number');
+    if (def) {
+        link.textContent = def.textContent;
+    }
+    else if (thm){
+        link.textContent = thm.textContent;
+    }
+}
+
+</script>
+   </body>
+
+</html>
