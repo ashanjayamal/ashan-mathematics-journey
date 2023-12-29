@@ -137,4 +137,22 @@
 <p><a href="#chapter1">Go to Chapter 1</a></p>
 </div>
    </body>
+<div id="df3" class="definition">
+    <h2>Definition <span class="def-number">4</span></h2>
+    <p>...</p>
+</div>
+
+<!-- Later in your document -->
+<p>According to <a href="#df3" id="def-link">Definition</a>...</p>
+
+<script>
+window.onload = function() {
+    var link = document.getElementById('def-link');
+    var def = document.querySelector(link.getAttribute('href') + ' .def-number');
+    if (def) {
+        link.textContent = 'Definition ' + def.textContent;
+    }
+}
+</script>
+
 </html>
