@@ -43,7 +43,7 @@
 <!-- More content goes here -->
 
 <div class="definition">
-    <h2 id="df2">Definition <span class="def-number">3</span></h2>
+    <h2 id="df2">Definition <span class="def-number"></span></h2>
     <p>Let $S$ be a finite subset of a poset $A$. The join of $S$, denoted by $\bigvee S$, is a unique element (if it exists) that satisfies the following conditions:</p>
     <ol>
         <li>Every element $s \in S$ is less than or equal to $\bigvee S$, i.e., $s \leq \bigvee S$ for all $s \in S$.</li>
@@ -56,14 +56,14 @@
 <!-- More content goes here -->
 
 <div class="definition">
-    <h2 id="df3">Definition <span class="def-number">4</span></h2>
+    <h2 id="df3">Definition <span class="def-number"></span></h2>
     <p>Let $P$ be a poset. If there exists an element $a \in P$ such that $a \leq x$ for all $x \in P$, then $a$ is called the least or zero element of $P$. It is denoted by $0$. If there exists an element $b \in P$ such that $x \leq b$ for all $x \in P$, then $b$ is called the greatest or unit element of $P$. It is denoted by $1$.</p>
 </div>
 
 <!-- More content goes here -->
 
 <div class="definition">
-    <h2 id="df4">Definition <span class="def-number">5</span></h2>
+    <h2 id="df4">Definition <span class="def-number"></span></h2>
     <p>A lattice is a poset $A$ such that every finite subset of $A$ has both a meet and a join. A lattice is termed complete if it accommodates meets and joins of arbitrary subsets of $A$, not merely finite ones. A lattice is characterized as distributive if the operations of meet and join obey to the distributive law. Specifically, for all $a, b, c \in A$, the following equality holds:</p>
     <p>$$a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)$$</p>
 </div>
@@ -76,7 +76,7 @@
     </ol>
 
     <div class="definition">
-    <h2>Definition <span class="def-number">1</span></h2>
+    <h2>Definition <span class="def-number"></span></h2>
     <p>Let $A$ be a distributive lattice. For an element $a \in A$, assume there exists another element $\neg a \in A$ satisfying the following conditions:</p>
     <ol>
         <li>$a \land \neg a = 0$, and</li>
@@ -148,6 +148,19 @@ window.onload = function() {
     var def = document.querySelector(link.getAttribute('href') + ' .def-number');
     if (def) {
         link.textContent = 'Definition ' + def.textContent;
+    }
+}
+</script>
+
+<script>
+   window.onload = function() {
+    var definitions = document.getElementsByClassName('definition');
+    for (var i = 0; i < definitions.length; i++) {
+        definitions[i].getElementsByClassName('def-number')[0].innerText = i + 1;
+    }
+    var theorems = document.getElementsByClassName('theorem');
+    for (var i = 0; i < theorems.length; i++) {
+        theorems[i].getElementsByClassName('thm-number')[0].innerText = definitions.length + i + 1;
     }
 }
 </script>
