@@ -40,15 +40,68 @@
 <div class="proof">
 <p><em>Proof:</em></p>
 <p>
-$(\Rightarrow)$ Suppose $X$ is compact and let $F$ be a collection of closed subsets of $X$ with the FIP. We want to show that $\bigcap F \neq \emptyset$.
-   Suppose for contradiction that $\bigcap F = \emptyset$. 
-   Then for every point in $X$, there is at least one set in $F$ that does not contain this point. This is equivalent to saying that every point in $X$ is in the complement of at least one set in $F$. Since the sets in $F$ are closed, their complements are open, and the union of these open sets covers $X$.
-  Thus there exist a open cover of X and since $X$ is compact, there is a finite subcover, say $\{F_1, F_2, \ldots, F_n\}$. But this contradicts the assumption that $F$ has the FIP, because the intersection of any finite subcollection of $F$ is non-empty.</p>
+$(\Rightarrow)$ Suppose $X$ is compact and let $F$ be a collection of closed subsets of $X$ with the FIP. We want to show that $\bigcap F \neq \emptyset$. Suppose for contradiction that $\bigcap F = \emptyset$. Then the sets in $F$ cover $X$, and since $X$ is compact, there is a finite subcover, say $\{F_1, F_2, \ldots, F_n\}$. But this contradicts the assumption that $F$ has the FIP, because the intersection of any finite subcollection of $F$ is non-empty.</p>
 <p>
 $(\Leftarrow)$ Now suppose that for every collection $F$ of closed subsets of $X$ with the FIP, we have $\bigcap F \neq \emptyset$. We want to show that $X$ is compact. Let $\{U_i\}$ be an open cover of $X$. We may assume that the $U_i$ are distinct. Define $F = \{X \setminus U_i\}$. Then $F$ is a collection of closed subsets of $X$ with the FIP. By assumption, $\bigcap F \neq \emptyset$, which means that there is a point in $X$ that is not in any $U_i$, contradicting the fact that $\{U_i\}$ is a cover of $X$. Therefore, $X$ must be compact.
 </p>
 <p class="qed">∎</p>
 </div>
+<div class="definition">
+    <h3 id="df3">Definition <span class="def-number"></span></h3>
+    Let $C$ be a collection of subsets of a topological space $X$, with the FIP. We say that $C$ is maximal (with respect to the FIP) if whenever $A$ is a collection of subsets with the FIP such that $C \subseteq A$, then $C = A$.
+</div>
+<div class="theorem"> 
+        <h3 id="thm">Proposition <span class="thm-number"></span></h3>
+     For every collection of closed subsets $C$ with the FIP, there is a maximal $A$ such that $C \subseteq A$.
+</div>
+<div class="theorem"> 
+        <h3 id="thm">Theorem <span class="thm-number"></span></h3>{Zorn's Lemma}
+Let $(P, \leq)$ be a (non-empty) partially ordered set such that every linearly ordered subset has an upper bound. Then $P$ contains a maximal element.    
+</div>
+To prove this we will need a theorem (which is called a lemma for historical reasons) from set theory:
+<div class="theorem"> 
+        <h3 id="thm">Lemma <span class="thm-number"></span></h3>[Zorn's Lemma]
+     Let $(P, \leq)$ be a (non-empty) partially ordered set such that every linearly ordered subset has an upper bound. Then $P$ contains a maximal element.
+</div>
+The partial order we will consider is the family $T$ of all collections of subsets of a space $X$ with the FIP that contain $C$, ordered by $\subseteq$. Hence, $T \neq \emptyset$ as $C \in T$.
+<div class="proof">
+    <p><em>Proof:</em></p>
+ Let $C$ be a collection of subsets of $X$ with the FIP. Let $A$ be a totally
+ ordered subset of $T$, the family of all collections of subsets of a space $X$ with the FIP and that contain $C$. We aim to demonstrate that $A$ has an upper bound.
+
+\textbf{Claim:} $\bigcup_{F \in A} F$ is an upper bound for $A$.
+
+It is evident that $\mathcal{F} \subseteq \bigcup_{\mathcal{F} \in A} F$ for each $\mathcal{F} \in A$. The remaining part to prove is that $\bigcup_{\mathcal{F} \in A} \mathcal{F}$ has the FIP. Let $F_1, F_2, \ldots, F_n \in \bigcup_{F \in A} F$, then there exist $\mathcal{F}_1, \ldots, \mathcal{F}_n$ such that $F_i \in \mathcal{F}_i$ for $i=1 \ldots n$. Since $A$ is totally ordered, there exists a $1 \leq N \leq n$ such that $\mathcal{F}_i \subseteq \mathcal{F}_N$ for all $1 \leq i \leq n$. Therefore, $F_i \in \mathcal{F}_N$ for all $1 \leq i \leq n$ and because $\mathcal{F}_N$ has the FIP, $$\bigcap_{i=1}^{n} F_i \in \mathcal{F}_N \subseteq \bigcup_{\mathcal{F} \in A} \mathcal{F}$$.
+
+Hence, Zorn s Lemma applies and $T$ has a maximal element as required.
+        <p  class="qed"></p>  
+</div>
+<div class="definition">
+    <h3 id="df3">Definition <span class="def-number"></span></h3>
+    A collection of subsets $F$ of a space $X$ is called a filter if:
+<ol>
+</li><li> Finite intersections are contained in $F$. That is: $(\forall n \in \mathbb{Z}^{+})(\forall F_1, \ldots, F_n \in F)[\bigcap_{i=1}^{n} F_i \in F]$
+</li><li> $\emptyset \notin F$ and $X \in F$
+</li><li> $F$ is closed upwards. That is if $B \subseteq A \subseteq X$ with $B \in F$ then $A \in F$.
+</li></ol>
+</div>
+\textbf{Remark} Any filter satisfies the FIP by property (1) and (2).\\
+<div class="definition">
+    <h3 id="df3">Definition <span class="def-number"></span></h3>
+    Let $F$ be a collection of subsets of a topological space $X$, that is a filter. We say that $F$ is a maximal filter if  $\mathcal{A}$ is a filter of $X$ such that $\mathcal{F} \subseteq\mathcal{A}$, then $\mathcal{F} = \mathcal{A}$.
+</div>
+<div class="theorem"> 
+        <h3 id="thm">Example <span class="thm-number"></span></h3>
+For the set of real numbers, denoted by $X = \mathbb{R}$, we can examine the following:
+<ul>
+</li><li> $\mathcal{F}_1 := \{(a, b) \subseteq \mathbb{R} : 100 \in (a, b)\}$;
+</li><li> $\mathcal{F}_2 := \{A \subseteq \mathbb{R} : \exists (a, b) \ni 100, (a, b) \subseteq A\}$; and
+</li><li> $\mathcal{F}_3 := \{A \subseteq \mathbb{R} : 100 \in A\}$.
+</li></ul>
+Here $\mathcal{F}_1 \subseteq \mathcal{F}_2 \subseteq \mathcal{F}_3$  and all three collections have the finite intersection property (FIP). However, $\mathcal{F}_1$ does not qualify as a filter. Because $(99,101)\in \mathcal{F}_1$. But $(99,101)\subsetneq[99,101]\not\in\mathcal{F}_1$. So $\mathcal{F}_1$ does not stratify 3rd condition. While $\mathcal{F}_2$ does, and $\mathcal{F}_3$ is a maximal filter. It is very easy to check other conditions.
+
+</div>
+
 
 <!-- Later in your document --------------------------------------------------------------------------------------------->
 
