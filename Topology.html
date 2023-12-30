@@ -54,7 +54,7 @@ $(\Leftarrow)$ Now suppose that for every collection $F$ of closed subsets of $X
         <h3 id="thm">Proposition <span class="thm-number"></span></h3>
      For every collection of closed subsets $C$ with the FIP, there is a maximal $A$ such that $C \subseteq A$.
 </div>
- this we will need a theorem (which is called a lemma for historical reasons) from set theory:
+ We will need a theorem (which is called a lemma for historical reasons) from set theory:
 <div class="theorem"> 
         <h3 id="thm">Lemma <span class="thm-number"></span> (Zorn's Lemma)</h3>
      Let $(P, \leq)$ be a (non-empty) partially ordered set such that every linearly ordered subset has an upper bound. Then $P$ contains a maximal element.
@@ -70,7 +70,7 @@ The partial order we will consider is the family $T$ of all collections of subse
 It is evident that $\mathcal{F} \subseteq \bigcup_{\mathcal{F} \in A} F$ for each $\mathcal{F} \in A$. The remaining part to prove is that $\bigcup_{\mathcal{F} \in A} \mathcal{F}$ has the FIP. Let $F_1, F_2, \ldots, F_n \in \bigcup_{F \in A} F$, then there exist $\mathcal{F}_1, \ldots, \mathcal{F}_n$ such that $F_i \in \mathcal{F}_i$ for $i=1 \ldots n$. Since $A$ is totally ordered, there exists a $1 \leq N \leq n$ such that $\mathcal{F}_i \subseteq \mathcal{F}_N$ for all $1 \leq i \leq n$. Therefore, $F_i \in \mathcal{F}_N$ for all $1 \leq i \leq n$ and because $\mathcal{F}_N$ has the FIP, $$\bigcap_{i=1}^{n} F_i \in \mathcal{F}_N \subseteq \bigcup_{\mathcal{F} \in A} \mathcal{F}$$.
 
 Hence, Zorn s Lemma applies and $T$ has a maximal element as required.
-        <p  class="qed"></p>  
+        <p  class="qed">∎</p>  
 </div>
 <div class="definition">
     <h3 id="df3">Definition <span class="def-number"></span></h3>
@@ -110,7 +110,7 @@ If $\mathcal{F}$ is a collection of subsets from a set $X$ that is maximal with 
 
 </li><li> The third property holds: This proof is simialr to previous one.
 </li></ol>
-        <p  class="qed"></p>  
+        <p class="qed">∎</p>  
 </div>
 The most crucial part of a filter is property (1). The only other fact about maximal filters we will need is the following way to identify whether a set belongs to the maximal filter.
 <div class="theorem"> 
@@ -124,7 +124,7 @@ The most crucial part of a filter is property (1). The only other fact about max
     <p><em>Proof:</em></p> 
 <p>Forward directiona is trivial. Suppose that $A \in F$. By using $F$ has the finite intersection property (FIP) it is very clear that $\forall F \in \mathcal{F}, A \cap F \neq \emptyset$. </p>
 <p>Conversely, suppose that $\forall F \in F, A \cap F \neq \emptyset$. We are going to show that $\{A\} \cup \mathcal{F}$ has the FIP, in which case the result follows by maximality of $F$. Let $F_1, \ldots, F_n \in \mathcal{F}$. Since $\mathcal{F}$ is a filter we have that $\emptyset \neq \bigcap_{i=1}^{n} F_i \in \mathcal{F}$. So  by assumption $\left(\bigcap_{i=1}^{n} F_i\right) \cap A \neq \emptyset$. Since $F_1, \ldots, F_n $ are arbitary chosen from $\mathcal{F}$, $\{A\} \cup \mathcal{F}$ has FIP. Since $\mathcal{F}$ is maximal with respect to FIP, then $\mathcal{F}\cup \{A\} =\mathcal{F}$. Therefore, $A\in \mathcal{F}$</p>
-        <p  class="qed"></p>  
+        <p class="qed">∎</p>  
 </div>
 
 
