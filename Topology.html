@@ -95,7 +95,39 @@ For the set of real numbers, denoted by $X = \mathbb{R}$, we can examine the fol
 </li><li> $\mathcal{F}_3 := \{A \subseteq \mathbb{R} : 100 \in A\}$.
 </li></ul>
 Here $\mathcal{F}_1 \subseteq \mathcal{F}_2 \subseteq \mathcal{F}_3$  and all three collections have the finite intersection property (FIP). However, $\mathcal{F}_1$ does not qualify as a filter. Because $(99,101)\in \mathcal{F}_1$. But $(99,101)\subsetneq[99,101]\not\in\mathcal{F}_1$. So $\mathcal{F}_1$ does not stratify 3rd condition. While $\mathcal{F}_2$ does, and $\mathcal{F}_3$ is a maximal filter. It is very easy to check other conditions.
+</div>
 
+<div class="definition">
+    <h3 id="df3">Definition <span class="def-number"></span></h3>
+<div class="theorem"> 
+        <h3 id="thm">Theorem <span class="thm-number"></span></h3>
+If $\mathcal{F}$ is a collection of subsets from a set $X$ that is maximal with respect to the Finite Intersection Property (FIP). Then, $\mathcal{F}$ is a maximal filter.
+</div>
+<div class="proof">
+    <p><em>Proof:</em></p>We have check 3 conditions of definition of filters. Let's check them one by one.
+
+<ol>
+<li> The first property holds: We need to show that $\mathcal{F}$ have the finite intersections. Let's consider $F_1, ..., F_n\in \mathcal{F}$. The intersection of these elements, $\bigcap_{i=1}^{n} F_i\neq \emptyset$, due to the FIP of \mathcal{F}. It's clear that the set $\{\bigcap_{i=1}^{n} F_i\} \cup \mathcal{F}$ also satisfies the FIP. Therefore, by the maximality of $\mathcal{F}$, we have$\mathcal{F}=\{\bigcap_{i=1}^{n} F_i\} \cup \mathcal{F}$, Thus $\bigcap_{i=1}^{n} F_i\in F$.
+
+</li><li> The second property holds: Clearly, $\emptyset \notin \mathcal{F}$ as $F$ has the FIP. Thus, $X \cap F = F \neq \emptyset$ for each $F \in \mathcal{F}$. So, $F\cup\{X\}$ has the FIP. By the maximality of $\mathcal{F}$, $\mathcal{F} = F \cup \{X\}$, Thus, $X \in \mathcal{F}$.
+
+</li><li> The third property holds: This proof is simialr to previous one.
+</li></ol>
+        <p  class="qed"></p>  
+</div>
+The most crucial part of a filter is property (1). The only other fact about maximal filters we will need is the following way to identify whether a set belongs to the maximal filter.
+<div class="theorem"> 
+        <h3 id="thm">Theorem <span class="thm-number"></span></h3>
+ Suppose that $F$ is a maximal filter on a set $X$ and $A \subseteq X$. Then,
+ $$A \in \mathcal{F} \Longleftrightarrow \forall F \in \mathcal{F}, A \cap F \neq \emptyset$$
+   
+</div>
+
+<div class="proof">
+    <p><em>Proof:</em></p> 
+<p>Forward directiona is trivial. Suppose that $A \in F$. By using $F$ has the finite intersection property (FIP) it is very clear that $\forall F \in \mathcal{F}, A \cap F \neq \emptyset$. </p>
+<p>Conversely, suppose that $\forall F \in F, A \cap F \neq \emptyset$. We are going to show that $\{A\} \cup \mathcal{F}$ has the FIP, in which case the result follows by maximality of $F$. Let $F_1, \ldots, F_n \in \mathcal{F}$. Since $\mathcal{F}$ is a filter we have that $\emptyset \neq \bigcap_{i=1}^{n} F_i \in \mathcal{F}$. So  by assumption $\left(\bigcap_{i=1}^{n} F_i\right) \cap A \neq \emptyset$. Since $F_1, \ldots, F_n $ are arbitary chosen from $\mathcal{F}$, $\{A\} \cup \mathcal{F}$ has FIP. Since $\mathcal{F}$ is maximal with respect to FIP, then $\mathcal{F}\cup \{A\} =\mathcal{F}$. Therefore, $A\in \mathcal{F}$</p>
+        <p  class="qed"></p>  
 </div>
 
 
