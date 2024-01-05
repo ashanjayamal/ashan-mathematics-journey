@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
+<script>
+    window.onload = function() {
+    var definitions = document.getElementsByClassName('definition');
+        var theorems = document.getElementsByClassName('theorem');
+        var count = 1;
+        for (var i = 0; i < Math.max(definitions.length, theorems.length); i++) {
+            if (i < definitions.length) {
+                definitions[i].getElementsByClassName('def-number')[0].innerText = count++;
+            }
+            if (i < theorems.length) {
+                theorems[i].getElementsByClassName('thm-number')[0].innerText = count++;
+            }
+        }
+    
+    var link = document.getElementById('def-link');
+    var def = document.querySelector(link.getAttribute('href') + ' .def-number');
+    var thm = document.querySelector(link.getAttribute('href') + ' .thm-number');
+    if (def) {
+        link.textContent = def.textContent;
+    }
+    else if (thm){
+        link.textContent = thm.textContent;
+    }
+}
+
+</script>
     <style>
         .footer {
             position: fixed;
@@ -273,7 +300,9 @@ Every proper ideal in a Boolean algebra is contained in some maximal ideal.
 
 </script>
 </body>
+<footer>
 <div class="footer">
-    <p>Copyright &copy; 2024 Your Name</p>
+    <p>Copyright &copy; 2024 Ashan Jayamal </p>
 </div>
+<\footer>
 </html>
